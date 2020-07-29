@@ -47,7 +47,11 @@ park_info["data"].each do |park|
 
             description = park["description"]
 
-            Park.create(name: name, state: state, activity: activity, entrance_fee: entrance_fee, img_urls: img_urls, operating_hours: operating_hours, description: description)
+            lat = park["latitude"].to_f
+
+            long = park["longitude"].to_f
+
+            Park.create(name: name, state: state, activity: activity, entrance_fee: entrance_fee, img_urls: img_urls, operating_hours: operating_hours, description: description, lat: lat, long: long)
         
         end
     end
